@@ -1,0 +1,14 @@
+.body_section {
+    display: flex;
+    height: 600px;
+}
+
+.left_section {
+    width: 25%;
+    background-color: red;
+}
+
+.right_section {
+    width: 75%;
+    background-color: blue;
+}

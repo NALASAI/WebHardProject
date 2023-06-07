@@ -1,0 +1,25 @@
+.top_section {
+    height: 90px;
+    margin: 0px 40px 20px;
+    display: flex;
+    align-items: end;
+}
+
+.top_title {
+    font-size: 35px;
+    text-align: initial;
+    width: 20%;
+}
+.top_info {
+    width: 20%;
+    text-align: initial;
+}
+
+.top_info span, .top_sub span {
+    margin-right: 40px;
+}
+
+.top_sub {
+    width: 60%;
+    text-align: end;
+}
