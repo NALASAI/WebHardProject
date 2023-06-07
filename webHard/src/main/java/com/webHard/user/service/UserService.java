@@ -1,5 +1,5 @@
 package com.webHard.user.service;
 
-public class userService {
+public class UserService {
 
 }
