@@ -5,10 +5,56 @@
 
 .left_section {
     width: 25%;
-    background-color: red;
+    border: 1px solid;
+}
+
+.left_top_section {
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.folder_create_btn, .folder_delete_btn {
+    background-color: white;
+    border: 0.1px solid;
+    padding: 4px 35px;
 }
 
 .right_section {
     width: 75%;
-    background-color: blue;
+    border: 1px solid;
+}
+
+.right_top_section {
+    display: flex;
+    padding: 15px 10px;
+}
+
+.file_download_btn, .file_upload_btn, .file_delete_btn {
+    background-color: white;
+    border: 0.1px solid;
+    padding: 4px 35px;
+    margin-right: 20px;
+}
+.file_manager_section {
+    width: 52%;
+}
+
+.search_section {
+    width: 20%;
+    margin: 0px 25px 0px 150px;
+}
+
+.search_input {
+    padding: 6px 5px 4px 10px;
+    border-radius: 2px;
+    border: 0.1px solid;
+    width: 100%;
+}
+
+.search_btn {
+    background-color: white;
+    border: 0.1px solid;
+    padding: 4px 15px;
+    border-radius: 2px;
 }
