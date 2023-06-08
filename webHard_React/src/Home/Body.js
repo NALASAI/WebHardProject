@@ -91,6 +91,18 @@ const Body = () => {
         )
     })
 
+    const apiTest = async () => {
+        const response = await axios.put('/api/putTest', {
+            headers: {
+                  'Content-Type': 'application/json',
+            }
+        }).then((response) => {
+            console.log(response);
+        }).catch((error) => {
+            console.error(error);
+        })
+    }
+
     const createFolder = () => {
 
     }
@@ -148,6 +160,7 @@ const Body = () => {
                 <div>
                     <button className='' onClick={test}>더보기</button>
                 </div>
+                <div onClick={apiTest}>apiTest</div>
             </div>
         </div>
     )

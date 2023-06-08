@@ -4,9 +4,9 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.webHard.folder.entity.Folder;
+import com.webHard.folder.entity.FolderEntity;
 
 
-public interface FolderRepository extends JpaRepository<Folder,UUID>{
+public interface FolderRepository extends JpaRepository<FolderEntity,UUID>{
 	
 }

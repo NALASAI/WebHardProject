@@ -1,5 +1,11 @@
 package com.webHard.folder.dto;
 
-public class FileDto {
+import com.webHard.folder.entity.FileEntity;
+
+import lombok.Data;
+
+
+@Data
+public class FileDto extends FileEntity{
 
 }

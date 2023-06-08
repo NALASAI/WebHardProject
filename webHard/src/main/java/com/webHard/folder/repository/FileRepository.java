@@ -4,9 +4,9 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.webHard.folder.entity.File;
+import com.webHard.folder.entity.FileEntity;
 
 
-public interface FileRepository extends JpaRepository<File,UUID> {
+public interface FileRepository extends JpaRepository<FileEntity,UUID> {
 	
 }

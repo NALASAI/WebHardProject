@@ -20,27 +20,27 @@ import lombok.NoArgsConstructor;
 @Table(name = "folder")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Folder {
+public class FolderEntity {
 	
 	@Id
 	@GeneratedValue(generator = "uuid2")
-	@Column(nullable = false)
-	private UUID folder_uuid;
+	@Column(name="folder_uuid", nullable = false)
+	private UUID folderUuid;
 	
 	@Column(length=100, nullable = false)
-	private String folder_nm;
+	private String folderNm;
 	
 	@Column(length=255, nullable = false)
-	private String folder_path;
+	private String folderPath;
 	
 	@Column(nullable = false)
-	private LocalDateTime create_folder_dt;
-	
+	private LocalDateTime createFolderDt;
+	/*
 	@ManyToOne
 	@JoinColumn(name="user_uuid")
 	private UUID user_uuid;
 	
 	@ManyToOne
-	@JoinColumn(name="user_uuid")
-	private UUID com_uuid;
+	@JoinColumn(name="com_uuid")
+	private UUID com_uuid;*/
 }

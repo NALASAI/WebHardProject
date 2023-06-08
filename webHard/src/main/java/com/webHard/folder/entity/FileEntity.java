@@ -11,7 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.webHard.user.entity.UserEntity;
+
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -20,26 +23,27 @@ import lombok.NoArgsConstructor;
 @Table(name = "file")
 @NoArgsConstructor
 @AllArgsConstructor
-public class File {
+@Builder
+public class FileEntity {
 	
 	@Id
 	@GeneratedValue(generator = "uuid2")
-	@Column(nullable = false)
-	private UUID file_uuid;
+	@Column(name="file_uuid", nullable = false)
+	private UUID fileUuid;
 	
 	@Column(length=100, nullable = false)
-	private String file_nm;
+	private String fileNm;
 	
 	@Column(length=255, nullable = false)
-	private String file_path;
+	private String filePath;
 	
 	@Column(length=100, nullable = false)
-	private String file_extension;
+	private String fileExtension;
 	
 	@Column(nullable = false)
-	private LocalDateTime create_file_dt;
+	private LocalDateTime createFileDt;
 	
 	@ManyToOne
 	@JoinColumn(name="user_uuid")
-	private UUID user_uuid;
+	private UserEntity userUuid;
 }
