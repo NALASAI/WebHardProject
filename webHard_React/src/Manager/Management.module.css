@@ -2,7 +2,9 @@
 .ManagerMain{
     display: flex;
 
-    width: 100%;
+    margin: 0 auto;
+
+    width: 1280px;
 }
 
 .ManagerBody{
@@ -28,11 +30,12 @@
 
 .DetailBar{
     border-bottom: 1px solid black;
-    padding: 10px 0;
 }
 
 .DetailBar > p{
     width: 120px;
+
+    text-align: center;
 }
 
 .DetailItem{
@@ -48,8 +51,8 @@
 }
 
 #DetailName > img{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
 
     margin: 0 10px;
 }
@@ -57,7 +60,6 @@
 /* 모달 창 */
 
 .ModalMain{
-    opacity: 0.7;
     background-color: rgba(76, 76, 76, 0.1);
 }
 
@@ -68,12 +70,9 @@
 
     transform: translate(-50%, -50%);
 
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
 
-    opacity: 1;
-
-    border-radius: 5%;
     background-color: white;
 }
 
@@ -96,9 +95,11 @@
     display: flex;
     padding: 0 30px;
 
-    height: 80px;
+    height: 50px;
 
     border-bottom: 1px solid rgb(83, 83, 177);
+
+    position: relative;
 
     align-items: center;
 }
@@ -112,10 +113,30 @@
 }
 
 .BoxItem > img{
-    width: 40px;
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+}
+
+.updateBtn{
+    width: 80px;
     height: 40px;
 
-    margin: 0 10px;
+    position: absolute;
+    right: 10px;
+
+    border: 1px solid rgb(212, 212, 212);
+    background-color: aliceblue;
+}
+
+.updateBtn:hover{
+    background-color: rgb(220, 238, 255);
+}
+
+.TestItem > img{
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
 }
 
 /* 관리 네비게이션바 */
@@ -150,7 +171,62 @@
 #UserManagement{
     height: 100%;
 }
+
+.UserContents{
+    margin-top: 50px;
+    border-top: 3px solid rgb(83, 83, 177);
+}
+
+#testScroll{
+    height: 250px;
+
+    overflow-y: scroll;
+
+    border-bottom: 1px solid rgb(83, 83, 177);
+}
+
+.testList{
+    display: flex;
+
+    width: 100%;
+    height: 50px;
+
+    border-bottom: 1px solid rgb(83, 83, 177);
+
+    justify-content: space-around;
+}
+
+.TestItem{
+    display: flex;
+
+    width: 140px;
+    height: 50px;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnMenu{
+    display: flex;
+
+    height: 90px;
+
+    align-items: center;
+    justify-content: right;
+}
+
+.fileStateBtn{
+    width: 100px;
+    height: 60px;
+
+    margin: 0 5px;
+}
 /* 회사 관리 CSS */
 #CompanayManagement{
     height: 100%;
+}
+
+#address{
+    width: 200px;
 }
