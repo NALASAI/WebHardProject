@@ -1,0 +1,41 @@
+/* 공통 */
+.LoginMainWrap {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.Container {
+  text-align: -webkit-center;
+}
+
+/* 로그인 */
+.LoginWrap {
+  width: 20%;
+}
+
+/* 아이디 찾기 */
+.FindTabWrap {
+  display: inline-block;
+}
+
+.PanelWrap {
+  list-style-type: none;
+}
+
+/* 회원가입 */
+
+.FormContent {
+  width: 27%;
+}
+
+.CompanyRegisterSection {
+  display: -webkit-inline-box;
+}
+
+.ZipNoSection {
+  display: -webkit-inline-box;
+}
+
+.BtnRegister {
+  font-size: small;
+}

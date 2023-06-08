@@ -1,81 +1,134 @@
 import React, { useState } from "react";
-import "./Login.css";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+
+import styles from "./Login.module.css";
 
 const Login = () => {
   return (
-    <div className="login_wrap">
-      <div className="id_pw_wrap">
-        <div className="id_section">
-          <input
+    <div className={styles.LoginWrap}>
+      <div className={styles.IdPwWrap}>
+        <div className={styles.IdSection}>
+          <TextField
+            sx={{ mb: 1, mt: 1, width: 300 }}
             type="email"
             id="id"
             name="id"
             placeholder="아이디 (이메일 형식)"
             title="아이디"
-            className="input_text"
+            className={styles.InputText}
+            variant="outlined"
+            label="아이디"
+            size="small"
           />
         </div>
-        <div className="pw_section">
-          <input
+        <div className={styles.PwSection}>
+          <TextField
+            sx={{ mb: 1, mt: 1, width: 300 }}
             type="password"
             id="pw"
             name="pw"
             placeholder="비밀번호"
             title="비밀번호"
-            className="input_text"
+            className={styles.InputText}
+            variant="outlined"
+            label="비밀번호"
+            size="small"
           />
         </div>
       </div>
-      <div className="btn_login_wrap">
-        <button type="submit" className="btn_login">
-          <span className="btn_text">로그인</span>
-        </button>
+      <div className={styles.BtnLoginWrap}>
+        <Button
+          sx={{ mt: 3, mb: 2, width: 300 }}
+          type="submit"
+          className={styles.BtnLogin}
+          variant="contained"
+        >
+          <span className={styles.BtnText}>로그인</span>
+        </Button>
       </div>
     </div>
   );
 };
 
 const FindId = () => {
+  const [tabIndex, setTabIndex] = useState(0);
+
+  const handleTabChange = (event, newTabIndex) => {
+    setTabIndex(newTabIndex);
+    console.log(event);
+  };
+
   return (
-    <div className="content">
-      <div className="find_wrap">
-        <ul className="menu_wrap" role="tablist">
-          <li className="menu_list" role="presentation">
-            <span className="text">ID 찾기</span>
-          </li>
-          <li className="menu_list" role="presentation">
-            <span className="text">비밀번호 찾기</span>
-          </li>
-        </ul>
-        <ul className="panel_wrap">
-          <li className="panel_item">
-            <div className="panel_inner">
-              <div className="id_pw_wrap">
-                <div className="id_section">
-                  <input
+    <div className={styles.Content}>
+      <div className={styles.FindWrap}>
+        <div className={styles.FindTabWrap}>
+          <Tabs
+            Tabs
+            value={tabIndex}
+            onChange={handleTabChange}
+            className={styles.MenuWrap}
+            role="tablist"
+          >
+            <Tab
+              className={styles.MenuList}
+              role="presentation"
+              label="ID 찾기"
+            >
+              <span className={styles.Text}>ID 찾기</span>
+            </Tab>
+            <Tab
+              className={styles.MenuList}
+              role="presentation"
+              label="비밀번호 찾기"
+            >
+              <span className={styles.Text}>비밀번호 찾기</span>
+            </Tab>
+          </Tabs>
+        </div>
+        <div>{tabIndex === 1}</div>
+        <ul className={styles.PanelWrap}>
+          <li className={styles.PanelItem}>
+            <div className={styles.PanelInner}>
+              <div className={styles.IdPwWrap}>
+                <div className={styles.IdSection}>
+                  <TextField
+                    sx={{ mb: 1, mt: 1, width: 300 }}
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="이름"
                     title="이름"
-                    className="input_text"
+                    className={styles.InputText}
+                    variant="outlined"
+                    label="이름"
+                    size="small"
                   />
                 </div>
-                <div className="id_section">
-                  <input
+                <div className={styles.IdSection}>
+                  <TextField
+                    sx={{ mb: 1, mt: 1, width: 300 }}
                     type="text"
                     id="phone"
                     name="phone"
-                    placeholder="전화번호"
                     title="전화번호"
-                    className="input_text"
+                    className={styles.InputText}
+                    variant="outlined"
+                    label="전화번호"
+                    size="small"
                   />
                 </div>
               </div>
-              <div className="btn_login_wrap">
-                <button type="submit" className="btn_login">
-                  <span className="btn_text">아이디 찾기</span>
-                </button>
+              <div className={styles.BtnLoginWrap}>
+                <Button
+                  sx={{ mt: 3, mb: 2, width: 300 }}
+                  type="submit"
+                  className={styles.BtnLogin}
+                  variant="contained"
+                >
+                  <span className={styles.BtnText}>아이디 찾기</span>
+                </Button>
               </div>
             </div>
           </li>
@@ -86,56 +139,94 @@ const FindId = () => {
 };
 
 const FindPw = () => {
+  const [tabIndex, setTabIndex] = useState(0);
+
+  const handleTabChange = (event, newTabIndex) => {
+    setTabIndex(newTabIndex);
+  };
   return (
-    <div className="content">
-      <div className="find_wrap">
-        <ul className="menu_wrap" role="tablist">
-          <li className="menu_list" role="presentation">
-            <span className="text">ID 찾기</span>
-          </li>
-          <li className="menu_list" role="presentation">
-            <span className="text">비밀번호 찾기</span>
-          </li>
-        </ul>
-        <ul className="panel_wrap">
-          <li className="panel_item">
-            <div className="panel_inner">
-              <div className="id_pw_wrap">
-                <div className="id_section">
-                  <input
+    <div className={styles.Content}>
+      <div className={styles.FindWrap}>
+        <div className={styles.FindTabWrap}>
+          <Tabs
+            Tabs
+            value={tabIndex}
+            onChange={handleTabChange}
+            className={styles.MenuWrap}
+            role="tablist"
+          >
+            <Tab
+              className={styles.MenuList}
+              role="presentation"
+              label="ID 찾기"
+            >
+              <span className={styles.Text}>ID 찾기</span>
+            </Tab>
+            <Tab
+              className={styles.MenuList}
+              role="presentation"
+              label="비밀번호 찾기"
+            >
+              <span className={styles.Text}>비밀번호 찾기</span>
+            </Tab>
+          </Tabs>
+        </div>
+        <ul className={styles.PanelWrap}>
+          <li className={styles.PanelItem}>
+            <div className={styles.PanelInner}>
+              <div className={styles.IdPwWrap}>
+                <div className={styles.IdSection}>
+                  <TextField
+                    sx={{ mb: 1, mt: 1, width: 300 }}
                     type="text"
                     id="name"
                     name="name"
                     placeholder="이름"
                     title="이름"
-                    className="input_text"
+                    className={styles.InputText}
+                    variant="outlined"
+                    label="이름"
+                    size="small"
                   />
                 </div>
-                <div className="id_section">
-                  <input
+                <div className={styles.IdSection}>
+                  <TextField
+                    sx={{ mb: 1, mt: 1, width: 300 }}
                     type="text"
                     id="phone"
                     name="phone"
                     placeholder="전화번호"
                     title="전화번호"
-                    className="input_text"
+                    className={styles.InputText}
+                    variant="outlined"
+                    label="전화번호"
+                    size="small"
                   />
                 </div>
-                <div className="id_section">
-                  <input
+                <div className={styles.IdSection}>
+                  <TextField
+                    sx={{ mb: 1, mt: 1, width: 300 }}
                     type="email"
                     id="id"
                     name="id"
                     placeholder="아이디 (이메일 형식)"
                     title="아이디"
-                    className="input_text"
+                    className={styles.InputText}
+                    variant="outlined"
+                    label="아이디"
+                    size="small"
                   />
                 </div>
               </div>
-              <div className="btn_login_wrap">
-                <button type="submit" className="btn_login">
-                  <span className="btn_text">비밀번호 찾기</span>
-                </button>
+              <div className={styles.BtnLoginWrap}>
+                <Button
+                  sx={{ mt: 3, mb: 2, width: 300 }}
+                  type="submit"
+                  className={styles.BtnLogin}
+                  variant="contained"
+                >
+                  <span className={styles.BtnText}>비밀번호 찾기</span>
+                </Button>
               </div>
             </div>
           </li>
@@ -147,109 +238,158 @@ const FindPw = () => {
 
 const Register = () => {
   return (
-    <div className="content">
-      <div className="form_content">
-        <div className="form_section">
-          <input
+    <div className={styles.Content}>
+      <div className={styles.FormContent}>
+        <div className={styles.FormSection}>
+          <TextField
+            sx={{ mb: 1, mt: 1, width: 300 }}
             type="email"
             id="id"
             name="id"
             placeholder="아이디 (이메일 형식)"
             title="아이디 (이메일 형식)"
-            className="input_text"
+            className={styles.InputText}
+            variant="outlined"
+            label="아이디"
+            size="small"
           />
         </div>
-        <div className="form_section">
-          <input
+        <div className={styles.FormSection}>
+          <TextField
+            sx={{ mb: 1, mt: 1, width: 300 }}
             type="password"
             id="pw"
             name="pw"
             placeholder="비밀번호"
             title="비밀번호"
-            className="input_text"
+            className={styles.InputText}
+            variant="outlined"
+            label="비밀번호"
+            size="small"
           />
         </div>
-        <div className="form_section">
-          <input
+        <div className={styles.FormSection}>
+          <TextField
+            sx={{ mb: 1, mt: 1, width: 300 }}
             type="text"
             id="name"
             name="name"
             placeholder="이름"
             title="이름"
-            className="input_text"
+            className={styles.InputText}
+            variant="outlined"
+            label="이름"
+            size="small"
           />
         </div>
-        <div className="form_section">
-          <input
+        <div className={styles.FormSection}>
+          <TextField
+            sx={{ mb: 1, mt: 1, width: 300 }}
             type="text"
             id="phone"
             name="phone"
             placeholder="전화번호"
             title="전화번호"
-            className="input_text"
+            className={styles.InputText}
+            variant="outlined"
+            label="전화번호"
+            size="small"
           />
         </div>
-        <div className="form_section">
-          <input
-            type="text"
-            id="company"
-            name="company"
-            placeholder="회사명"
-            title="회사명"
-            className="input_text"
-          />
+        <div className={styles.CompanyRegisterSection}>
+          <div className={styles.FormSection}>
+            <TextField
+              sx={{ mb: 1, mt: 1, width: 120 }}
+              type="text"
+              id="company"
+              name="company"
+              placeholder="회사명"
+              title="회사명"
+              className={styles.InputText}
+              variant="outlined"
+              label="회사명"
+              size="small"
+            />
+          </div>
+          <div className={styles.BtnRegisterForm}>
+            <Button
+              sx={{ mt: 1, mb: 1, ml: 7, width: 120, height: 40 }}
+              type="submit"
+              className={styles.BtnRegister}
+              variant="contained"
+            >
+              <span className={styles.BtnText}>회사검색</span>
+            </Button>
+          </div>
         </div>
-        <div className="btn_register_form">
-          <button type="submit" className="btn_register">
-            <span className="btn_text">회사검색</span>
-          </button>
+        <div className={styles.ZipNoSection}>
+          <div className={styles.FormSection}>
+            <TextField
+              sx={{ mb: 1, mt: 1, width: 120 }}
+              type="text"
+              id="zip_no"
+              name="zip_no"
+              placeholder="우편번호"
+              title="우편번호"
+              className={styles.InputText}
+              variant="outlined"
+              label="우편번호"
+              size="small"
+            />
+          </div>
+          <div className={styles.BtnRegisterForm}>
+            <Button
+              sx={{ mt: 1, mb: 1, ml: 7, width: 120, height: 40 }}
+              type="submit"
+              className={styles.BtnRegister}
+              variant="contained"
+            >
+              <span className={styles.BtnText}>우편번호 찾기</span>
+            </Button>
+          </div>
         </div>
-        <div className="form_section">
-          <input
-            type="text"
-            id="zip_no"
-            name="zip_no"
-            placeholder="우편번호"
-            title="우편번호"
-            className="input_text"
-          />
-        </div>
-        <div className="btn_register_form">
-          <button type="submit" className="btn_register">
-            <span className="btn_text">우편번호 찾기</span>
-          </button>
-        </div>
-        <div className="form_section">
-          <input
+        <div className={styles.FormSection}>
+          <TextField
+            sx={{ mb: 1, mt: 1, width: 300 }}
             type="text"
             id="doro_cd"
             name="doro_cd"
             placeholder="도로명주소"
             title="도로명주소"
-            className="input_text"
+            className={styles.InputText}
+            variant="outlined"
+            label="도로명주소"
+            size="small"
           />
         </div>
-        <div className="form_section">
-          <input
+        <div className={styles.FormSection}>
+          <TextField
+            sx={{ mb: 1, mt: 1, width: 300 }}
             type="text"
             id="detail_cd"
             name="detail_cd"
             placeholder="상세주소"
             title="상세주소"
-            className="input_text"
+            className={styles.InputText}
+            variant="outlined"
+            label="상세주소"
+            size="small"
           />
         </div>
-        <div className="btn_login_wrap">
-          <button type="submit" className="btn_login">
-            <span className="btn_text">회원가입</span>
-          </button>
+        <div className={styles.BtnLoginWrap}>
+          <Button
+            sx={{ mt: 3, mb: 2, width: 300, height: 40 }}
+            type="submit"
+            className={styles.BtnLogin}
+            variant="contained"
+          >
+            <span className={styles.BtnText}>회원가입</span>
+          </Button>
         </div>
       </div>
     </div>
   );
 };
-
-const Button = () => {};
 
 const LoginMain = () => {
   const buttons = ["아이디찾기", "비밀번호찾기", "회원가입"];
@@ -262,30 +402,27 @@ const LoginMain = () => {
   };
 
   return (
-    <div className="App">
-      <div className="login_logo_section">Webhard</div>
-      <div className="container" id="container">
-        <div className="isVisible-test">
-          <p>
-            {isVisible === "로그인" && <Login />}
-            {isVisible === "아이디찾기" && <FindId />}
-            {isVisible === "비밀번호찾기" && <FindPw />}
-            {isVisible === "회원가입" && <Register />}
-          </p>
-        </div>
-        <div className="btn-group" style={{ display: ButtonShow() }}>
+    <div className={styles.LoginMainWrap}>
+      <div className={styles.LoginLogoSection}>Webhard</div>
+      <div className={styles.Container}>
+        {isVisible === "로그인" && <Login />}
+        {isVisible === "아이디찾기" && <FindId />}
+        {isVisible === "비밀번호찾기" && <FindPw />}
+        {isVisible === "회원가입" && <Register />}
+        <div className={styles.BtnGroup} style={{ display: ButtonShow() }}>
           {buttons.map((buttonName) => (
-            <button
+            <Button
               type="button"
+              variant="text"
               key={buttonName}
-              className="btn"
+              className={styles.Btn}
               onClick={() => {
                 setIsVisible(buttonName);
                 setButtonVisible(false);
               }}
             >
-              {buttonName.toLocaleUpperCase()}
-            </button>
+              {buttonName.toLocaleUpperCase()}{" "}
+            </Button>
           ))}
         </div>
       </div>
