@@ -35,27 +35,6 @@
     width: 120px;
 }
 
-.ModalMain{
-    opacity: 0.7;
-    background-color: rgba(76, 76, 76, 0.1);
-}
-
-.ModalBox{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: 1000px;
-    height: 600px;
-
-    opacity: 1;
-    box-shadow: 1;
-
-    background-color: white;
-}
-/* ---------------------------------------------------------------------------- */
 .DetailItem{
     height: 60px;
 }
@@ -68,11 +47,73 @@
     justify-content: center;
 }
 
-/* ---------------------------------------------------------------------------- */
-
 #DetailName > img{
     width: 20px;
     height: 20px;
+
+    margin: 0 10px;
+}
+
+/* 모달 창 */
+
+.ModalMain{
+    opacity: 0.7;
+    background-color: rgba(76, 76, 76, 0.1);
+}
+
+.ModalBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: 500px;
+
+    opacity: 1;
+
+    border-radius: 5%;
+    background-color: white;
+}
+
+.BoxTitle{
+    display: flex;
+    padding: 0 50px;
+
+    height: 100px;
+
+    border-bottom: 2px solid rgb(83, 83, 177);
+
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(83, 83, 177);
+
+    align-items: end
+}
+
+.BoxItem{
+    display: flex;
+    padding: 0 30px;
+
+    height: 80px;
+
+    border-bottom: 1px solid rgb(83, 83, 177);
+
+    align-items: center;
+}
+
+.BoxItem:last-child{
+    border: none;
+}
+
+.BoxItem > p{
+    margin: 0;
+}
+
+.BoxItem > img{
+    width: 40px;
+    height: 40px;
 
     margin: 0 10px;
 }

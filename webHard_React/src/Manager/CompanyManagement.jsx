@@ -1,6 +1,20 @@
+import * as React from 'react';
 import styles from './Management.module.css';
+import user from '../img/user.png';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import { useState } from 'react';
 
 function CompanayManagement() {
+    const CompanyItem = [
+        {
+            id : 1,
+            companyName : '제너지'
+        }
+    ]
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     return(
         <div id={styles.CompanayManagement}>
             <div className={styles.DetailBar}>

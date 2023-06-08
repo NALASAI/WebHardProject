@@ -36,8 +36,13 @@ function UserManagement() {
             company : '롯데',
             date : '2023-06-07'
     }];
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
+    const [open, setOpen] = useState(false);
+    const [itemId, setItemId] = useState();
+    const handleOpen = id => {
+        console.log(id);
+        setItemId(id);
+        setOpen(true);
+    }
     const handleClose = () => setOpen(false);
     return(
         <div id={styles.UserManagement}>
@@ -50,7 +55,7 @@ function UserManagement() {
             </div>
             {useritem.map(item =>(
                 <div key={item.id}>
-                    <div className={styles.DetailItem} onClick={handleOpen}>
+                    <div className={styles.DetailItem} onClick={() => handleOpen(item.id)}>
                         <div id={styles.DetailName}>
                             <img src={user}/>
                             <p>{item.name}</p>
@@ -71,8 +76,31 @@ function UserManagement() {
                     <Modal
                         className={styles.ModalMain}
                         open={open}
+                        id={itemId}
                         onClose={handleClose}>
                         <Box className={styles.ModalBox}>
+                            <div key={item.id}>
+                                <div className={styles.BoxTitle}><p>내 프로필</p></div>
+                                <div className={styles.BoxMain}>
+                                    <div className={styles.BoxItem}>
+                                        <img src={user}/>
+                                        {item.name}
+                                    </div>
+                                    <div className={styles.BoxItem}>
+                                        <img src={user}/>
+                                        {item.tel}
+                                    </div>
+                                    <div className={styles.BoxItem}>
+                                        <img src={user}/>
+                                        <p>비밀번호</p>
+
+                                    </div>
+                                    <div className={styles.BoxItem}>
+                                        <img src={user}/>
+                                        {item.company}
+                                    </div>
+                                </div>
+                            </div>
                         </Box>
                     </Modal>
                 </div>
