@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useEffect } from "react";
 import './Main.css';
 import Header from '../Home/Header';
 import Body from '../Home/Body';

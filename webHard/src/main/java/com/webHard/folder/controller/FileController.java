@@ -1,5 +1,5 @@
 package com.webHard.folder.controller;
 
-public class folderController {
+public class FileController {
 
 }

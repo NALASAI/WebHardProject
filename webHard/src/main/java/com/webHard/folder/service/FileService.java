@@ -1,5 +1,5 @@
 package com.webHard.folder.service;
 
-public class fileService {
-	
+public interface FileService {
+
 }

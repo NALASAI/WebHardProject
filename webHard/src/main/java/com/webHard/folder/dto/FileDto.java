@@ -1,5 +1,5 @@
 package com.webHard.folder.dto;
 
-public class folderDto {
+public class FileDto {
 
 }

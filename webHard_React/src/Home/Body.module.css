@@ -1,11 +1,11 @@
 .body_section {
     display: flex;
-    height: 600px;
+    height: 630px;
 }
 
 .left_section {
     width: 25%;
-    border: 1px solid;
+    border: 0.1px solid #78a1b2;
 }
 
 .left_top_section {
@@ -18,11 +18,12 @@
     background-color: white;
     border: 0.1px solid;
     padding: 4px 35px;
+    cursor: pointer;
 }
 
 .right_section {
     width: 75%;
-    border: 1px solid;
+    border: 0.1px solid #78a1b2;
 }
 
 .right_top_section {
@@ -35,6 +36,7 @@
     border: 0.1px solid;
     padding: 4px 35px;
     margin-right: 20px;
+    cursor: pointer;
 }
 .file_manager_section {
     width: 52%;
@@ -48,8 +50,12 @@
 .search_input {
     padding: 6px 5px 4px 10px;
     border-radius: 2px;
-    border: 0.1px solid;
     width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 0.1px solid;
+    outline: none;
 }
 
 .search_btn {
@@ -57,4 +63,37 @@
     border: 0.1px solid;
     padding: 4px 15px;
     border-radius: 2px;
+    cursor: pointer;
 }
+
+.nav_info_section, .info_section {
+    display: flex;
+}
+
+.info_section:hover {
+    background-color: rgb(212, 212, 212);
+}
+
+.nav_info_section div, .info_section div {
+    padding: 10px;
+}
+
+.nav_item_name, .item_name {
+    width: 20%;
+}
+
+.nav_item_name, .nav_path, .nav_generator, .nav_create_date {
+    border: 0.1px solid #78a1b2;
+}
+
+.nav_path, .path {
+    width: 50%;
+}
+.nav_generator, .generator {
+    width: 15%;
+}
+.nav_create_date, .create_date {
+    width: 15%;
+}
+
+
